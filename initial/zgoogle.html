@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .tab-container {
+            width: 400px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #4CAF50;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button.active, .tab-button:hover {
+            background-color: #45a049;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .g_id_signin {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        // JavaScript Code
+
+        // Switch between tabs
+        function openTab(tabName) {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            document.querySelector(`#${tabName}`).classList.add('active');
+            document.querySelector(`.tab-button[onclick="openTab('${tabName}')"]`).classList.add('active');
+        }
+
+        // Handle Google login response
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+
+            // Optional: Send the token to your server for verification
+            // fetch('/login', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ token: response.credential })
+            // }).then(res => res.json()).then(data => console.log(data));
+        }
+    </script>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('login')">Login</button>
+            <button class="tab-button" onclick="openTab('register')">Register</button>
+        </div>
+
+        <div id="login" class="tab-content active">
+            <h2>Login</h2>
+            <div id="g_id_onload"
+                 data-client_id="898279102295-a7821iva1nldlddjgbf172so8n80uke6.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+        </div>
+
+        <div id="register" class="tab-content">
+            <h2>Register</h2>
+            <p>Registration form goes here...</p>
+        </div>
+    </div>
+</body>
+</html>

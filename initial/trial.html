@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="login_style.css">
+    <style>
+        /* Additional styles for the toggle */
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-container button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .active-btn {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="back_img">
+        <img src="login_image.avif" alt="Background Image">
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h1 id="form-title">Login</h1>
+
+            <!-- Toggle Buttons -->
+            <div class="toggle-container">
+                <button id="login-toggle" class="active-btn" onclick="showLogin()">Login</button>
+                <button id="signup-toggle" onclick="showSignup()">Signup</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" action="INDEX.HTML" method="post">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <button class="btn" type="submit">Login</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" action="INDEX.HTML" method="post" class="hidden">
+                <div class="textbox">
+                    <input type="text" placeholder="Name" name="name" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Phone Number" name="phone" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <button class="btn" type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('form-title').textContent = 'Login';
+            document.getElementById('login-toggle').classList.add('active-btn');
+            document.getElementById('signup-toggle').classList.remove('active-btn');
+        }
+
+        function showSignup() {
+            document.getElementById('signup-form').classList.remove('hidden');
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('form-title').textContent = 'Signup';
+            document.getElementById('signup-toggle').classList.add('active-btn');
+            document.getElementById('login-toggle').classList.remove('active-btn');
+        }
+    </script>
+</body>
+</html>

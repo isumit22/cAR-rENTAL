@@ -1,0 +1,37 @@
+[Start]
+   ↓
+[Home Page]
+   ↓
+[Navigation Bar]
+   ├─ [About Page]
+   ├─ [Products/Services Page]
+   ├─ [Contact Page]
+   └─ [Other Pages]
+   
+If [Products/Services Page]
+   ↓
+[Product/Service Details]
+   ↓
+[Add to Cart / Inquiry Form]
+   ↓
+[Form Submission]
+   ↓
+[Backend Processing]
+   ↓
+[Confirmation / Success Message]
+   ↓
+[Return to Home / Continue Shopping]
+
+If [Contact Page]
+   ↓
+[Contact Form]
+   ↓
+[Form Submission]
+   ↓
+[Backend Processing]
+   ↓
+[Confirmation / Thank You Message]
+   ↓
+[Return to Home / Continue Browsing]
+
+[End]

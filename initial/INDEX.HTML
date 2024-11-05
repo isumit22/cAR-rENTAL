@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav h1 {
+            margin-left: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #eb0f0f;
+            text-decoration: none;
+        }
+
+        nav ul li a:nth-child(4) {
+            color: #6c6969;
+        }
+
+        /* Hero Section */
+        header {
+            background: #f4f4f4;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        header div {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        header a {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Search Form */
+        .search-box{
+            display: flex;
+            justify-content: center;
+        }
+        #search {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            /* padding-left: 60%; */
+            /* width: 40%; */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(4, 160, 30, 0.1);
+        }
+
+        #search h2{
+            text-align: center;
+        }
+
+        #searchForm {
+            display: block;
+        }
+
+        #searchForm label {
+            margin-right: 10px;
+        }
+
+        #searchForm select, #searchForm input, #searchForm button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #searchForm button {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Car Listings Section */
+        section {
+            padding: 2rem 0;
+        }
+
+        section div {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .car-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .car-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .car-card h3 {
+            margin: 1rem 0;
+        }
+
+        .car-card p {
+            margin: 0.5rem 0;
+        }
+
+        .car-card p.font-bold {
+            font-weight: bold;
+        }
+
+        .car-card a {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        footer div {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-left: 1rem;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .love {
+            display: none;
+        }
+        /* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Rental Steps Section */
+.rental-steps {
+    background-color:#f5f5f5  ;
+    padding: 40px 0;
+    border-bottom: 2px solid #e0e0e0;
+    
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1;
+    max-width: 200px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.step img {
+    width: 60px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Why Zoomcar Section */
+.why-zoomcar {
+    background-color: white;
+    padding: 40px 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    flex: 1;
+    max-width: 250px;
+    text-align: center;
+}
+
+.feature img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+    /* Style for Location Detection Button */
+    #detect-location {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #detect-location:hover {
+            background-color: #0056b3;
+        }
+        /* Pop-up Menu */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none; /* Initially hidden */
+            z-index: 1000;
+        }
+
+        /* Overlay to disable interaction */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Initially hidden */
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+           Car Rent'O
+            <ul>
+                <li><a href="knew.html">Login</a></li>
+                <li><a href="enq.html" style="text-decoration:wavy;">Inquiry</a></li>
+                <li><a href="new.html">Cars</a></li>
+                <li><a href="#">Host</a></li>
+                <li><a href="ABOUT.HTML">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header>
+        <div>
+            <h1>Self-Drive Car Rentals on your Fingertip</h1>
+            <p>25,000+ Verified Cars | 2 Billions+ Kms Driven | 38+ Cities | 20+ Airports</p>
+            
+        </div>
+    </header>
+    
+    <!-- Search Form -->
+     <div class="search-box">
+
+        <div id="search">
+            <h2>Find Your Rental Car</h2>
+            <form id="searchForm">
+                <label for="pickup-location">Location:</label>
+                <select id="pickup-location" name="pickup-location" required>
+                    <option value="location1">Knowledge park 1</option>
+                    <option value="location2">Knowledge park 2</option>
+                    <option value="location3">Knowledge park 3</option>
+                </select>
+                <button id="detect-location" type="button">Use Current Location</button>
+                <label for="pickup-date">Booking Date:</label>
+                <input type="date" id="pickup-date" name="pickup-date" required>
+    
+                <button type="button" id="searchButton" style="cursor: pointer;">Search</button>
+            </form>
+        </div>
+     </div>
+    
+    <!-- JavaScript to get location -->
+     <script>
+    document.getElementById("detect-location").addEventListener("click", () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+    
+                    try {
+                        const locationName = await getLocationName(latitude, longitude);
+                        const locationSelect = document.getElementById("pickup-location");
+    
+                        // Remove any previous "Current Location" option
+                        const existingOption = document.getElementById("current-location");
+                        if (existingOption) existingOption.remove();
+    
+                        // Add a new option with the current location
+                        const option = document.createElement("option");
+                        option.id = "current-location";
+                        option.value = "current-location";
+                        option.textContent = locationName || `Lat: ${latitude}, Long: ${longitude}`;
+                        option.selected = true;
+    
+                        locationSelect.appendChild(option);
+                    } catch (error) {
+                        console.error("Error fetching location name:", error);
+                        alert("Could not retrieve location name. Showing coordinates instead.");
+                    }
+                },
+                (error) => {
+                    console.error("Error getting location:", error);
+                    alert("Could not access location. Please check permissions.");
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+    
+    async function getLocationName(lat, lon) {
+        const apiUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
+        const response = await fetch(apiUrl);
+    
+        if (!response.ok) {
+            throw new Error("Failed to fetch location name.");
+        }
+    
+        const data = await response.json();
+        return data.address.city || data.address.town || data.address.village || "Unknown location";
+    }
+    
+      </script>
+       
+   
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoomcar Rental Steps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="rental-steps">
+        <h1>How to Get Rental Cars in Delhi with Car RentO?</h1>
+        <div class="steps">
+            <div class="step">
+                <img src="Black and Orange Car Rent Logo.png" alt="Log onto zoomcar.com">
+                <p>Log into <a href="knew.html">Car Rento</a></p>
+            </div>
+            <div class="step">
+                <img src="time-location-select.png" alt="Select city">
+                <p>Select city, date and time</p>
+            </div>
+            <div class="step">
+                <img src="deposit.png" alt="Pick car at 0 security deposit">
+                <p>Pick a car of your choice at 0 security deposit</p>
+            </div>
+            <div class="step">
+                <img src="zoomaway.png " alt="Zoomaway with unlimited kms">
+                <p>Zoomaway with the freedom of unlimited KMs</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-car">
+        <h2>Why choose Car Rento Self Drive Cars in Delhi?</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="repair.svg" alt="Accessible">
+                <h3>Accessible</h3>
+                <p>There’s always a Zoomcar near you</p>
+            </div>
+            <div class="feature">
+                <img src="earning.svg" alt="Secure">
+                <h3>Secure</h3>
+                <p>Pay 0 security deposit, get unlimited KMs</p>
+            </div>
+            <div class="feature">
+                <img src="flexibility.svg" alt="Convenient">
+                <h3>Convenient</h3>
+                <p>From Hatchbacks to SUVs, choose from 25,000+ cars</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<!-- Pop-up Menu -->
+<div id="overlay"></div>
+<div id="popup">
+    <p>Searching by your location...</p>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="term.html">Terms of Service</a></li>
+                <li><a href="ABOUT.HTML">Support</a></li>
+            </ul>
+            Made by Sumit
+        </div>
+        <div class="love"></div>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("searchButton").addEventListener("click", () => {
+            // Show the pop-up and overlay
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+
+            // Wait for 5 seconds, then redirect to new.html
+            setTimeout(() => {
+                window.location.href = "new.html";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Drive Cars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        nav {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav h1 {
+    margin-left: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #eb0f0f;
+    text-decoration: none;
+}
+
+nav ul li a:nth-child(4) {
+    color: #6c6969;
+}
+
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+    <div>
+       Car Rent'O
+        <ul>
+            <li><a href="knew.html">Login</a></li>
+            <li><a href="enq.html" style="text-decoration:wavy;">Inquiry</a></li>
+            <li><a href="new.html">Cars</a></li>
+            <li><a href="INDEX.HTML">Home</a></li>
+            <li><a href="ABOUT.HTML">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .car-card {
+            background: #fff;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+        .car-card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            height: 150px;
+            object-fit: cover;
+        }
+        .car-info {
+            padding: 15px;
+        }
+        .car-info h3 {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .car-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .price {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .button {
+            display: block;
+            text-align: center;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .car-card {
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+
+        .car-card.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Car Card 1 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="tigor-ev-drive-2.jpg">
+        <div class="car-info">
+            <h3>Tata Tigor EV 2024</h3>
+            <p>Manual • Electric • 5 Seats</p>
+            <p>Distance: 4.1 km away</p>
+            <p class="price">₹217/hr</p>
+            <a href="/webpage/car1.html" class="button">View Details</a>
+        </div>
+    </div>
+    
+    <!-- Car Card 2 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="i20.webp" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Hyundai Grand i20 2020</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹149/hr</p>
+            <a href="/webpage/car2.html" class="button">View Details</a>
+        </div>
+    </div>
+
+    <!-- Car Card 3 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="thar.png" >
+        <div class="car-info">
+            <h3>Mahindra Thar 2022</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 6.6 km away</p>
+            <p class="price">₹300/hr</p>
+            <a href="/webpage/car3.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 4 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="Verna.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Hyundai Verna 2023</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 25 km away</p>
+            <p class="price">₹190/hr</p>
+            <p>  </p>
+            <a href="/webpage/car4.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 5 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="harrier_8.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Tata Harrier 2021</h3>
+            <p>Automatic • Diesal • 7 Seats</p>
+            <p>Distance: 16.6 km away</p>
+            <p class="price">₹269/hr</p>
+            <a href="/webpage/car5.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 6 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="shift.webp" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Suzuki Swift 2019</h3>
+            <p>Manual • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹119/hr</p>
+            <a href="/webpage/car6.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 7 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="veeerna.webp" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Hyundai Verna 2024</h3>
+            <p>Manual • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹189/hr</p>
+            <a href="/webpage/car7.html" class="button">View Details</a>
+        </div>
+    </div><!-- Car Card 8 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="seltops.avif" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Kia Seltos</h3>
+            <p>Manual • Diesal • 5 Seats</p>
+            <p>Distance: 30.6 km away</p>
+            <p class="price">₹189/hr</p>
+            <a href="/webpage/car8.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 9 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="Hyundai_i20_(BC3)_Facelift_IMG_8594.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Hyundai Grand i20 2021</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹149/hr</p>
+            <a href="/webpage/car9.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 10 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="totoya-fortuner-facelift.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Toyota Fortuner</h3>
+            <p>Manual • Diesal • 8 Seats</p>
+            <p>Distance: 86.6 km away</p>
+            <p class="price">₹299/hr</p>
+            <a href="/webpage/car10.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 11 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="CE2B60EFEBDB43B3BF5BBEE50D721BEA.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Honda city 2023</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 6.6 km away</p>
+            <p class="price">₹189/hr</p>
+            <a href="/webpage/car11.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 12 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="sonet.jpg20240324-30-1yzie3o" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>KIA Sonet 2022</h3>
+            <p>Manual • Petrol • 5 Seats</p>
+            <p>Distance: 9.6 km away</p>
+            <p class="price">₹169/hr</p>
+            <a href="/webpage/car12.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 13 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="i10.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Hyundai Grand i10 2014</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹189/hr</p>
+            <a href="/webpage/car13.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 14 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="altris'.jpg20240810-34-1nwt84p" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Toyota Corolla Altis 2016</h3>
+            <p>Manua; • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹209/hr</p>
+            <a href="/webpage/car14.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 15 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="neo.jpg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Mahindra Bolero Neo 2023</h3>
+            <p>Manual • Diesal • 7 Seats</p>
+            <p>Distance: 2.6 km away</p>
+            <p class="price">₹289/hr</p>
+            <a href="/webpage/car15.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 16 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="ertiga.jpg20240925-37-jgyon9" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Maruti Suzuki Ertiga 2021</h3>
+            <p>Manual • Petrol • 7 Seats</p>
+            <p>Distance: 50.5 km away</p>
+            <p class="price">₹229/hr</p>
+            <a href="/webpage/car16.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 17 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="wagonr.jpeg" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Maruti wagonr 2019</h3>
+            <p>Manual • Petrol • 5 Seats</p>
+            <p>Distance: 42.3 km away</p>
+            <p class="price">₹100/hr</p>
+            <a href="/webpage/car17.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 18 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="breeza.avif" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Maruti breeza</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 26.6 km away</p>
+            <p class="price">₹149/hr</p>
+            <a href="/webpage/car18.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 19 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="dezire.jpg20240827-34-94i2a6" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Suzuki Swift Dezire 2018</h3>
+            <p>Automatic • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹172/hr</p>
+            <a href="/webpage/car19.html" class="button">View Details</a>
+        </div>
+    </div>
+    <!-- Car Card 20 -->
+    <div class="car-card" onclick="window.location.href='#'">
+        <img src="punch.jpg20241006-38-1p922o3" alt="Hyundai Grand i10">
+        <div class="car-info">
+            <h3>Tata Punch 2023</h3>
+            <p>Manual • Petrol • 5 Seats</p>
+            <p>Distance: 56.6 km away</p>
+            <p class="price">₹189/hr</p>
+            <a href="/webpage/car20.html" class="button">View Details</a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector('.container');
+        const carCards = Array.from(container.children);
+
+        // Shuffle the car cards
+        carCards.sort(() => Math.random() - 0.8);
+
+        // Clear the container and re-append shuffled cards with delayed fade-in effect
+        container.innerHTML = '';
+        carCards.forEach((card, index) => {
+            container.appendChild(card);
+
+            // Add a delay for the fade-in effect for each card
+            setTimeout(() => {
+                card.classList.add('show');
+            }, index * 200); // Adjust the timing (200ms) as needed
+        });
+    });
+</script>
+
+</body>
+</html>
+
