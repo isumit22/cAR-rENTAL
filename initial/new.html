@@ -399,6 +399,52 @@ nav ul li a:nth-child(4) {
             }, index * 200); // Adjust the timing (200ms) as needed
         });
     });
+    document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector('.container');
+    const carCards = Array.from(container.children);
+
+    // Function to shuffle an array
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    // Initial Shuffle and Display
+    shuffleArray(carCards);
+    container.innerHTML = '';
+    carCards.forEach((card, index) => {
+        container.appendChild(card);
+
+        // Add a delay for the fade-in effect for each card
+        setTimeout(() => {
+            card.classList.add('show');
+        }, index * 200); // Adjust the timing (200ms) as needed
+    });
+
+    // Infinite scrolling logic with shuffling
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Shuffle the cards before appending
+                const shuffledCards = shuffleArray([...carCards]);
+
+                shuffledCards.forEach(card => {
+                    const newCard = card.cloneNode(true); // Clone the card
+                    container.appendChild(newCard); // Append the shuffled clone
+                });
+
+                // Observe the new last card
+                observer.observe(container.lastElementChild);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1.0 // Trigger when the last card is fully visible
+    });
+
+    // Observe the last card in the container
+    observer.observe(container.lastElementChild);
+});
+
 </script>
 
 </body>
